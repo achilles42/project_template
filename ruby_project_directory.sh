@@ -31,3 +31,5 @@ echo 'source "https://rubygems.org"\ngem "rake"\ngem "rspec"' > Gemfile
 echo $file_name > README.md
 
 bundle install
+
+echo 'project is successfully created.'
