@@ -1,35 +1,40 @@
 echo 'Enter the Porject Name:'
 read file_name
-echo "Ruby Project Creating $file_name"
 
-cd ~/work
-mkdir $file_name
+if [ ! -d ~/work/$file_name ]; then
+    echo "Ruby Project Creating $file_name"
 
-cd $file_name
-mkdir lib
-mkdir bin
-mkdir spec
-touch README.md
-touch Rakefile
-touch Gemfile
+    cd ~/work
+    mkdir $file_name
 
-cd spec
-mkdir $file_name
-touch spec_helper.rb
-echo 'require' + $file_name + '.rb' > spec_helper.rb
+    cd $file_name
+    mkdir lib
+    mkdir bin
+    mkdir spec
+    touch README.md
+    touch Rakefile
+    touch Gemfile
 
-cd ..
-cd lib
-mkdir $file_name
-touch $file_name.rb
+    cd spec
+    mkdir $file_name
+    touch spec_helper.rb
+    echo 'require' + $file_name + '.rb' > spec_helper.rb
 
-cd ..
-echo 'require "rspec/core/rake_task"\nRSpec::Core::RakeTask.new(:spec)\ndesc "Run the default task"\ntask :default => [:spec]' > Rakefile
+    cd ..
+    cd lib
+    mkdir $file_name
+    touch $file_name.rb
 
-echo 'source "https://rubygems.org"\ngem "rake"\ngem "rspec"' > Gemfile
+    cd ..
+    echo 'require "rspec/core/rake_task"\nRSpec::Core::RakeTask.new(:spec)\ndesc "Run the default task"\ntask :default => [:spec]' > Rakefile
 
-echo $file_name > README.md
+    echo 'source "https://rubygems.org"\ngem "rake"\ngem "rspec"' > Gemfile
 
-bundle install
+    echo $file_name > README.md
 
-echo 'project is successfully created.'
+    bundle install
+
+    echo 'project is successfully created.'
+else
+   echo '\tproject name already exists. \n\thelp: \tplease run the script again with different project name.'
+fi
