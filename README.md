@@ -1,20 +1,15 @@
 ##Script for Creating the Standard Ruby Project Directory
 
-### This script is written using shell programming
-
+This script is written using shell programming
 
 ## Usage
 
-### Once you run the script
+ Once you run the script
 
 1. "Enter the Proejct Name":
-
 2. After Entering your project name it will create the standard ruby working project directory.
-
 3. It will automatic enter basic gem inside the Gemfile.
-
 4. And automatic create defalut task for running the specs.
-
 5. And automatic install the gems using 'bundle install'.
 
 
