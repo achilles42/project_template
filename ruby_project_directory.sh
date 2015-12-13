@@ -14,6 +14,9 @@ if [ ! -d ~/work/$file_name ]; then
     touch README.md
     touch Rakefile
     touch Gemfile
+    touch .gitignore
+
+    echo '.DS_Store' > .gitignore
 
     cd spec
     mkdir $file_name
