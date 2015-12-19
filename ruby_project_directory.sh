@@ -38,6 +38,8 @@ if [ ! -d ~/work/$file_name ]; then
     bundle install
 
     echo 'project is successfully created.'
+
+    cd ~/work/$file_name
 else
    echo '\tproject name already exists. \n\thelp: \tplease run the script again with different project name.'
 fi
